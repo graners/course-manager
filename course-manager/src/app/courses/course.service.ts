@@ -26,6 +26,10 @@ private coursesUrl: string = 'http://localhost:3100/api/courses'
       return this.httpClient.post<Course>(`${this.coursesUrl}`, course)
     }
   }
+
+  deleteById(id: number): Observable<any> {
+    return this.httpClient.delete<any>(`${this.coursesUrl}/${id}`)
+  }
 }
   var COURSES: Course[] = [
     {
